@@ -6,6 +6,7 @@ import ReactDOMServer from "react-dom/server";
 import App from "../client/App";
 
 const app = express();
+
 // 클라이언트 사이드에서 빌드된 html을 읽어와 사용
 const html = fs.readFileSync(
   path.resolve(__dirname, "../client/index.html"),
@@ -28,6 +29,6 @@ app.get("/", (req, res) => {
 // dist/client 폴더에 있는 파일들 제공
 app.use("/", express.static("dist/client"));
 
-app.listen(3000, () => {
-  console.log("Server is listening on port 3000");
+app.listen(3001, () => {
+  console.log("Server is listening on port 3001");
 });
